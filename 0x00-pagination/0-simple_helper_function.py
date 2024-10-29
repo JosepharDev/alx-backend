@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Simple pagination function helper"""
 
-from Typing import Tuple
+from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
