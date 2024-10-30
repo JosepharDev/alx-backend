@@ -14,7 +14,7 @@ class BasicCache(BaseCaching):
             - add a data to data_cache in base class storage
             and do nothing if item or key is none
         """
-        if key or item:
+        if key and item:
             self.cache_data[key] = item
 
     def get(self, key):
@@ -22,4 +22,4 @@ class BasicCache(BaseCaching):
             - get data from data_cache storage in base class
             if key exist and if not or key is none return none
         """
-        return self.cache_data.get(key)
+        return self.cache_data.get(key, None)
