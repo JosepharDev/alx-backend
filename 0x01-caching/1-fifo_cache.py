@@ -22,10 +22,12 @@ class FIFOCache(BaseCaching):
             bigger than our constants we remove fist inserted one
         """
         if key and item:
-            if len(self.cache_data) >= self.MAX_ITEMS:
-                key, _ = self.cache_data.popitem(last=False)
-                print('DISCARD: ', key)
             self.cache_data[key] = item
+        else:
+            return
+        if len(self.cache_data) > self.MAX_ITEMS:
+            key_re, _ = self.cache_data.popitem(last=False)
+            print('DISCARD: ', key_re)
 
     def get(self, key):
         """ put defines
