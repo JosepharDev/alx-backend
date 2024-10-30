@@ -13,7 +13,7 @@ class FIFOCache(BaseCaching):
         """ constructure method responsible
         of how object is created
         """
-        super().__init()
+        super().__init__()
         self.cache_data = OrderedDict()
 
     def put(self, key, item):
@@ -23,7 +23,7 @@ class FIFOCache(BaseCaching):
         """
         if key and item:
             if len(self.cache_data) >= self.MAX_ITEMS:
-                key, _ = self.cache.data.popitem(last=False)
+                key, _ = self.cache_data.popitem(last=False)
                 print('DISCARD: ', key)
             self.cache_data[key] = item
 
