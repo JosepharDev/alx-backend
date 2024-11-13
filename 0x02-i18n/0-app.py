@@ -10,7 +10,7 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/')
-def home() -> str:
+def home():
     """
         root view to render a root template
     """
